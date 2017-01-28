@@ -263,7 +263,7 @@ public class TlMock extends JPanel implements Runnable {
     }
 
     void start(String[] args) throws Exception {
-        JFrame frame = new JFrame("Trans-Lux Simulator");
+        JFrame frame = new JFrame("Trans-Lux Mock");
         frame.getContentPane().add(this, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(width, height);
@@ -282,7 +282,7 @@ public class TlMock extends JPanel implements Runnable {
                 for (int x = 0; x < 16; x++) {
                     int clr = cfi % 3 + 1;
                     int bgclr = (y + x) % 4;
-                    charAt(x, y, cfi, clr, bgclr);
+                    charAt(x, y, cfi, clr, 0b00);
                     cfi++;
                     if (cfi >= (font.length / 5)) {
                         cfi = 0;
